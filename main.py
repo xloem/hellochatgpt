@@ -3,7 +3,7 @@ import time
 
 def calm(num_minutes):
     """
-    Display calming messages and breathe in and out for a specified number of minutes.
+    Display calming messages and guide the user through deep breathing exercises for a specified number of minutes.
     """
     messages = [
         "Take a deep breath in...",
@@ -18,6 +18,9 @@ def calm(num_minutes):
     end_time = time.time() + 60 * num_minutes
     while time.time() < end_time:
         print(random.choice(messages))
+        print("Inhale for 5 seconds...")
+        time.sleep(5)
+        print("Exhale for 5 seconds...")
         time.sleep(5)
 
 calm(10)
