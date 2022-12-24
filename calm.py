@@ -10,8 +10,11 @@ def calm(num_minutes, standing):
     """
     end_time = time.time() + 60 * num_minutes
     breathing_time = 5
+    max_breathing_time = 10
     while time.time() < end_time:
         print(breathing_messages.get_inhale_message())
+        if breathing_time > max_breathing_time:
+            breathing_time = max_breathing_time
         timer.time_breath(breathing_time)
         print(breathing_messages.get_exhale_message())
         timer.time_breath(breathing_time)
