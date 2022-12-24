@@ -24,8 +24,20 @@ def calm(num_minutes):
     while time.time() < end_time:
         print(random.choice(messages))
         print("Inhale for 5 seconds...")
-        time.sleep(5)
+        start_time = time.time()
+        elapsed_time = 0
+        while elapsed_time < 5:
+            elapsed_time = time.time() - start_time
+            remaining_time = 5 - elapsed_time
+            print(f"{remaining_time:.1f} seconds remaining...")
+            time.sleep(1)
         print("Exhale for 5 seconds...")
-        time.sleep(5)
+        start_time = time.time()
+        elapsed_time = 0
+        while elapsed_time < 5:
+            elapsed_time = time.time() - start_time
+            remaining_time = 5 - elapsed_time
+            print(f"{remaining_time:.1f} seconds remaining...")
+            time.sleep(1)
 
 calm(10)
